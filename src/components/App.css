@@ -5,3 +5,30 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+div.main {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+header {
+  background-color: #3b5274;
+  color: #fff;
+  padding: 40px 0;
+  text-align: center;
+}
+
+header h1 {
+  font-size: clamp(1.6rem, 4vw, 2.5rem);
+}
+
+footer {
+  background-color: #3b5274;
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+}
+
+footer p {
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+}
