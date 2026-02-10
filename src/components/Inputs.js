@@ -5,11 +5,11 @@ function Inputs() {
         <article className="inputs">
             <form>
                 <div className="campo_input">
-                    <label>Descrição </label>
+                    <label className="inputs-maiores">Descrição </label>
                     <input type="text" />
                 </div>
                 <div className="campo_input">
-                    <label>Valor </label>
+                    <label className="inputs-maiores">Valor </label>
                     <input type="number" />
                 </div>
                 <div className="campo_input">
