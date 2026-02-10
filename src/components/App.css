@@ -1,3 +1,4 @@
+/* CONFIGURAÇÕES GERAIS */
 * {
   margin: 0;
   padding: 0;
@@ -11,6 +12,12 @@ div.main {
   grid-template-rows: auto 1fr auto;
 }
 
+article {
+  width: 100%;
+  max-width: 1080px;
+  margin: 1% auto;
+}
+/* CONFIGURAÇÃO DO CABEÇALHO */
 header {
   background-color: #3b5274;
   color: #fff;
@@ -21,20 +28,77 @@ header {
 header h1 {
   font-size: clamp(1.6rem, 4vw, 2.5rem);
 }
-
+/* CONFIGURAÇÃO DO  PREVIEW*/
 .preview {
-  width: 100%;
-  max-width: 1080px;
   display: flex;
   justify-content: center;
-  background-color: red;
   gap: 1.5%;
-  margin: 1% auto;
 }
 
 div.item-preview{
   background-color: #fff;
-  padding: 2% 4%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4%;
+}
+
+/* CONFIGURAÇÕES DOS INPUTS */
+article.inputs {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 2% 1%;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+label {
+  font-size: clamp(0.85rem, 2vw, 1.1rem);
+}
+
+input[type="number"]{
+  width: 110px;
+}
+
+button {
+  border: none;
+  border-radius: 15px;
+  background-color: #3b5274;
+  color: #fff;
+  padding: 8px 15px;
+  font-size: clamp(0.80rem, 1vw, 1.05rem);
+}
+
+/* CONFIGURAÇÃO DA TABELA */
+article.tabela {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 2% 1%;
+}
+
+table {
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+th {
+  background-color: #3b5274;
+  color: #fff;
+}
+
+td, th {
+  border: 1px solid black;
+  font-size: clamp(0.85rem, 2vw, 1.1rem);
+  padding: 1% 0;
 }
 
 main {
