@@ -46,9 +46,19 @@ function Inputs(props) {
                 </div>
                 <div className="campo_input">
                     <label> Entrada </label>
-                    <input name="tipo" value="entrada" type="radio" required onChange={capturarMudanca} />
+                    <input 
+                        name="tipo" 
+                        value="entrada" 
+                        checked={dados.tipo==="entrada"}
+                        type="radio" required 
+                        onChange={capturarMudanca} />
                     <label> Saída </label>
-                    <input name="tipo" value="saida" type="radio" required onChange={capturarMudanca} />
+                    <input 
+                        name="tipo" 
+                        value="saida" 
+                        type="radio" required 
+                        checked={dados.tipo==="saida"}
+                        onChange={capturarMudanca} />
                 </div>
                 <button type="submit">Salvar</button>
             </form>

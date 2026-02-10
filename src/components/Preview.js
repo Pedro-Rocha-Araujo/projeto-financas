@@ -5,11 +5,11 @@ function Preview(props) {
         <article className='preview'>
             <div className='item-preview'>
               <h2>Entradas</h2>
-              <p>R$ {props.entrada}</p>
+              <p>R$ {props.entradas}</p>
             </div>
             <div className='item-preview'>
               <h2>Saídas</h2>
-              <p>R$ {props.saida}</p>
+              <p>R$ {props.saidas}</p>
             </div>
             <div className='item-preview'>
               <h2>Situação</h2>

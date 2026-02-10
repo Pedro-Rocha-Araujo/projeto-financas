@@ -1,6 +1,6 @@
 import React from "react"
 
-function Tabela() {
+function Tabela(props) {
     return (
         <article className="tabela">
             <table>
@@ -10,12 +10,16 @@ function Tabela() {
                     <th>Tipo</th>
                     <th>Excluir</th>
                 </tr>
-                <tr>
-                    <td>Descrição</td>
-                    <td>Valor</td>
-                    <td>Tipo</td>
-                    <td>Excluir</td>
-                </tr>
+                {props.lista.map((_,i)=>{
+                    return (
+                        <tr>
+                            <td>{_.descricao}</td>
+                            <td>{_.valor}</td>
+                            <td>{_.tipo}</td>
+                            <td onClick={()=>{ props.onDelete(i) }}><i class="fa-solid fa-trash"></i></td>
+                        </tr>
+                    )
+                })}
             </table>
         </article>
     )

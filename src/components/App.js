@@ -15,6 +15,14 @@ function App() {
     })
   }
 
+  function deletar(id) {
+    setListaFinancas((prevValue)=>{
+      return prevValue.filter((_,i)=>{
+        return i !== id
+      })
+    })
+  }
+
   let entradas = 0
   let saidas = 0
   for(let c = 0; c < listaFinancas.length; c++){
@@ -34,7 +42,7 @@ function App() {
         <section>
           <Preview entradas={entradas} saidas={saidas} total={total} />
           <Inputs onAdd={adcionar} />
-          <Tabela />
+          <Tabela onDelete={deletar} lista={listaFinancas} />
         </section>
       </main>
       <Footer />
