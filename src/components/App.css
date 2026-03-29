@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 div.main {
@@ -30,7 +30,7 @@ header {
 }
 
 header h1 {
-  font-size: clamp(1.7rem, 4vw, 2.5rem);
+  font-size: clamp(1.4rem, 6vw, 2.5rem);
 }
 /* CONFIGURAÇÃO DO  PREVIEW*/
 .preview {
@@ -40,7 +40,7 @@ header h1 {
 }
 
 .preview p {
-  font-size: clamp(0.85rem, 2vw, 1rem);
+  font-size: clamp(0.8rem, 3vw, 1rem);
 }
 
 div.item-preview{
@@ -55,7 +55,7 @@ div.item-preview{
 }
 
 .preview h2 {
-  font-size: clamp(1.2rem, 4vw, 1.7rem);
+  font-size: clamp(1rem, 4vw, 1.7rem);
 }
 
 /* CONFIGURAÇÕES DOS INPUTS */
@@ -78,7 +78,7 @@ form {
 }
 
 label {
-  font-size: clamp(0.85rem, 2vw, 1.1rem);
+  font-size: clamp(0.8rem, 3vw, 1rem);
 }
 
 label.inputs-maiores{
@@ -86,7 +86,7 @@ label.inputs-maiores{
 }
 
 input {
-  height: 1.3rem;
+  height: 1.6rem;
   padding: 1px 5px;
 }
 
@@ -101,10 +101,17 @@ input[type="radio"]{
 button {
   border: none;
   border-radius: 15px;
+  color: #3b5274;
+  border: 1px solid #3b5274;
+  background-color: transparent;
+  padding: 6px 12px;
+  font-size: clamp(0.8rem, 2vw, 1.05rem);
+  transition: all 0.2s;
+}
+
+button:hover {
   background-color: #3b5274;
   color: #fff;
-  padding: 8px 15px;
-  font-size: clamp(0.80rem, 1vw, 1.05rem);
 }
 
 /* CONFIGURAÇÃO DA TABELA */
@@ -115,7 +122,7 @@ article.tabela {
 }
 
 table {
-  width: 100%;
+  width: 98%;
   max-width: 1000px;
   margin: auto;
   border-collapse: collapse;
@@ -146,7 +153,7 @@ footer {
 }
 
 footer p {
-  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  font-size: clamp(0.8rem, 3vw, 1.08rem);
 }
 
 @media screen and (max-width: 750px){
@@ -186,6 +193,7 @@ footer p {
     border: 1px solid black;
     margin-bottom: 0.6rem;
     box-shadow: -2px 2px 4px 1px rgba(0, 0, 0, 0.349);
+    border-radius: 0.4rem;
   }
   thead {
     display: none;
