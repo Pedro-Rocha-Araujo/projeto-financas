@@ -78,7 +78,7 @@ form {
 }
 
 label {
-  font-size: clamp(0.8rem, 3vw, 1rem);
+  font-size: clamp(0.8rem, 5vw, 1rem);
 }
 
 label.inputs-maiores{
@@ -88,10 +88,11 @@ label.inputs-maiores{
 input {
   height: 1.6rem;
   padding: 1px 5px;
+  max-width: 150px;
 }
 
 input[type="number"]{
-  width: 110px;
+  max-width: 150px;
 }
 
 input[type="radio"]{
@@ -136,8 +137,17 @@ th {
 
 td, th {
   border: 1px solid black;
-  font-size: clamp(0.85rem, 2vw, 1.1rem);
+  font-size: clamp(0.80rem, 1vw, 1.1rem);
   padding: 1% 0;
+}
+
+i {
+  color: rgb(255, 39, 39);
+  transition: all 0.2s;
+}
+
+i:hover {
+  transform: scale(1.2);
 }
 
 main {
@@ -176,8 +186,7 @@ footer p {
     margin: 0;
   }
   table td, th {
-    border: none;
-    border-bottom: 1px solid black;
+    border: 0.1rem solid rgb(71, 71, 71);
     text-align: right;
     padding: 0.6rem  1rem;
   }
@@ -190,9 +199,9 @@ footer p {
   table tr {
     display: flex;
     flex-direction: column;
-    border: 1px solid black;
-    margin-bottom: 0.6rem;
-    box-shadow: -2px 2px 4px 1px rgba(0, 0, 0, 0.349);
+    border: 0.1rem solid rgb(71, 71, 71);
+    margin-bottom: 1rem;
+    box-shadow: -2px 2px 4px 1px rgba(0, 0, 0, 0.267);
     border-radius: 0.4rem;
   }
   thead {
