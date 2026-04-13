@@ -30,7 +30,7 @@ header {
 }
 
 header h1 {
-  font-size: clamp(1.4rem, 6vw, 2.5rem);
+  font-size: clamp(1.4rem, 8vw, 2.5rem);
 }
 /* CONFIGURAÇÃO DO  PREVIEW*/
 .preview {
@@ -142,7 +142,7 @@ td, th {
 }
 
 i {
-  color: rgb(255, 39, 39);
+  color: rgb(24, 24, 24);
   transition: all 0.2s;
 }
 
