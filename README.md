@@ -1,8 +1,15 @@
 # Gerenciador de Finanças 🔢
-## O presente projeto foi desenvolvido com intuito de desenvolver minhas habilidades dom o frameworl React
+
+<img width="1920" height="945" alt="projeto-financas" src="https://github.com/user-attachments/assets/1bdeef3b-cd29-4d49-893a-e1dbdf0542b3" />
+
+## O presente projeto é um gerenciador de finanças que possui as seguintes funcionalidades:
+* Cadastrar entradas e Saídas financeiras
+* Excluir as informações adicionadas posteriormente
+* Visualizar a situação financeira de forma dinâmica
+
 ### Segue a lista de ferramentas usadas para desenvolver o projeto:
-* HTML5 CSS3
-* JavaScript React
+* HTML5 | CSS3
+* React.js
 * Git & Github
-#### Ressalvas: O intuito deste projeto é expor minhas habilidades como desenvolvedor frontens, portanto, o projeto foi desenvolvido sem banco de dados, e as validações estão muito simples.
-### Segue o link para o acesso no GitHubPages: https://pedro-rocha-araujo.github.io/projeto-financas/
+
+### Seque o link para acessar o deploy no Git-hub Pages: https://pedro-rocha-araujo.github.io/projeto-financas/
