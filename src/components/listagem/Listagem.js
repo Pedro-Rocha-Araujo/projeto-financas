@@ -2,7 +2,7 @@ import "./listagem.css"
 
 function Tabela(props) {
 	return (
-		<article className="tabela">
+		<section className="tabela">
 			<table>
 				<thead>
 					<tr>
@@ -27,7 +27,7 @@ function Tabela(props) {
 					})}
 				</tbody>
 			</table>
-		</article>
+		</section>
 	)
 }
 

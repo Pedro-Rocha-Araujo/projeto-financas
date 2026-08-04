@@ -1,33 +1,62 @@
-article.tabela {
+section.tabela {
   background-color: #fff;
-  border-radius: 10px;
-  padding: 2% 1%;
+  border-radius: 0.5rem;
+  padding: 1rem 0;
 }
 
 table {
   width: 98%;
-  max-width: 1000px;
-  margin: auto;
+  margin: 0 auto;
   border-collapse: collapse;
   text-align: center;
 }
 
+td, th {
+  border: 1px solid #444;
+  font-size: clamp(0.8rem, 2vw, 1rem);
+  padding: 0.5rem 0;
+}
+
 th {
+  padding: 1rem 0;
   background-color: #3b5274;
   color: #fff;
 }
 
-td, th {
-  border: 1px solid black;
-  font-size: clamp(0.80rem, 1vw, 1.1rem);
-  padding: 1% 0;
-}
-
-i {
-  color: rgb(24, 24, 24);
+table i {
+  color: #fff;
+  background-color: #3b5274;
+  padding: 0.5rem 0.6rem;
+  border-radius: 50%;
   transition: all 0.2s;
 }
 
-i:hover {
-  transform: scale(1.2);
+table i:hover {
+  transform: scale(1.1);
+}
+
+@media screen and (max-width: 780px) {
+  table td {
+    text-align: right;
+    padding: 0.5rem  1rem;
+    border: none;
+    border-bottom: 1px solid rgb(136, 136, 136);
+  }
+  td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  table tr {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(71, 71, 71);
+    margin-bottom: 0.5rem;
+    box-shadow: -3px 3px 2px 0px rgba(0, 0, 0, 0.466);
+    border-radius: 0.4rem;
+  }
+  thead {
+    display: none;
+  }
 }

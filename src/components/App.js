@@ -39,11 +39,9 @@ function App() {
     <div className='main'>
       <Header />
       <main>
-        <section>
           <Preview entradas={entradas} saidas={saidas} total={total} />
           <Inputs onAdd={adcionar} />
           <Tabela onDelete={deletar} lista={listaFinancas} />
-        </section>
       </main>
       <Footer />
     </div>

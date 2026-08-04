@@ -1,7 +1,7 @@
-article.inputs {
+section.inputs {
   background-color: #fff;
-  border-radius: 10px;
-  padding: 2% 1%;
+  border-radius: 0.5rem;
+  padding: 1.5rem 0;
 }
 
 div.campo_input {
@@ -17,39 +17,53 @@ form {
 }
 
 label {
-  font-size: clamp(0.8rem, 5vw, 1rem);
+  font-size: clamp(0.8rem, 3vw, 1rem);
 }
 
 label.inputs-maiores{
-  margin-right: 6px;
+  margin-right: 0.4rem;
 }
 
 input {
-  height: 1.6rem;
-  padding: 1px 5px;
-  max-width: 150px;
+  height: 1.8rem;
+  padding: 0.4rem;
+  width: 98%;
+  max-width: 180px;
 }
 
 input[type="number"]{
-  max-width: 150px;
+  max-width: 120px;
 }
 
 input[type="radio"]{
-  margin: 0 6px;
+  background-color: red;
+  margin: 0 0.5rem;
 }
 
 button {
   border: none;
-  border-radius: 15px;
+  border-radius: 1rem;
   color: #3b5274;
   border: 1px solid #3b5274;
   background-color: transparent;
-  padding: 6px 12px;
+  padding: 0.5rem 1.5rem;
   font-size: clamp(0.8rem, 2vw, 1.05rem);
-  transition: all 0.2s;
+  transition: all 0.4s;
 }
 
 button:hover {
   background-color: #3b5274;
   color: #fff;
+}
+
+@media screen and (max-width: 780px){
+  section.inputs {
+    display: flex;
+    justify-content: center;
+  }
+  form {
+    gap: 0.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }

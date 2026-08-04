@@ -27,7 +27,7 @@ function Inputs(props) {
 		})
 	}
 	return (    
-		<article className="inputs">
+		<section className="inputs">
 			<form onSubmit={enviarDados}>
 				<div className="campo_input">
 					<label className="inputs-maiores">Descrição </label>
@@ -39,7 +39,7 @@ function Inputs(props) {
 					/>
 				</div>
 				<div className="campo_input">
-					<label className="inputs-maiores">Valor </label>
+					<label className="inputs-maiores">Valor R$ </label>
 					<input 
 						name="valor" 
 						value={dados.valor} 
@@ -67,7 +67,7 @@ function Inputs(props) {
 				</div>
 					<button type="submit">Salvar</button>
 			</form>
-		</article>
+		</section>
 	)
 }
 
