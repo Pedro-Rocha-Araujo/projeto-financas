@@ -1,0 +1,24 @@
+.preview {
+  display: flex;
+  justify-content: center;
+  gap: 1.5%;
+}
+
+.preview p {
+  font-size: clamp(0.8rem, 3vw, 1rem);
+}
+
+div.item-preview{
+  background-color: #fff;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4%;
+  border-radius: 10px;
+}
+
+.preview h2 {
+  font-size: clamp(1rem, 4vw, 1.7rem);
+}

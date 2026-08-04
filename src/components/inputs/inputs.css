@@ -1,0 +1,55 @@
+article.inputs {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 2% 1%;
+}
+
+div.campo_input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+label {
+  font-size: clamp(0.8rem, 5vw, 1rem);
+}
+
+label.inputs-maiores{
+  margin-right: 6px;
+}
+
+input {
+  height: 1.6rem;
+  padding: 1px 5px;
+  max-width: 150px;
+}
+
+input[type="number"]{
+  max-width: 150px;
+}
+
+input[type="radio"]{
+  margin: 0 6px;
+}
+
+button {
+  border: none;
+  border-radius: 15px;
+  color: #3b5274;
+  border: 1px solid #3b5274;
+  background-color: transparent;
+  padding: 6px 12px;
+  font-size: clamp(0.8rem, 2vw, 1.05rem);
+  transition: all 0.2s;
+}
+
+button:hover {
+  background-color: #3b5274;
+  color: #fff;
+}

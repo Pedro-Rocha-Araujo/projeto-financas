@@ -1,10 +1,10 @@
 import {useState} from "react"
-import './App.css';
-import Header from "./pagina/Header"
-import Footer from "./pagina/Footer"
-import Preview from "./Preview"
-import Inputs from "./Inputs"
-import Tabela from "./Tabela"
+import './app.css';
+import Header from "./elements/Header"
+import Footer from "./elements/Footer"
+import Preview from "./preview/Preview"
+import Inputs from "./inputs/Inputs"
+import Tabela from "./listagem/Listagem"
 
 function App() {
   const [listaFinancas, setListaFinancas] = useState([])

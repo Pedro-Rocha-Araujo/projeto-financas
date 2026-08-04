@@ -1,3 +1,4 @@
+import "./listagem.css"
 
 function Tabela(props) {
 	return (

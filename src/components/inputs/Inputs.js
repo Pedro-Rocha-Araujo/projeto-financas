@@ -1,4 +1,5 @@
 import {useState} from "react"
+import "./inputs.css"
 
 function Inputs(props) {
 	const [dados, setDados] = useState({

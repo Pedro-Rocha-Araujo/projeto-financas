@@ -1,4 +1,4 @@
-import React from "react"
+import "./preview.css"
 
 function Preview(props) {
     return (
