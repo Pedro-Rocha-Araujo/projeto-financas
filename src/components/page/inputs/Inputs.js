@@ -59,6 +59,7 @@ function Inputs(props) {
 					<label> Saída </label>
 					<input 
 						name="tipo" 
+						className="red"
 						value="saida" 
 						type="radio" required 
 						checked={dados.tipo==="saida"}

@@ -10,13 +10,13 @@ div.campo_input {
   justify-content: center;
 }
 
-form {
+section.inputs form {
   display: flex;
   align-items: center;
   justify-content: space-around;
 }
 
-label {
+section.inputs label {
   font-size: clamp(0.8rem, 3vw, 1rem);
 }
 
@@ -24,23 +24,28 @@ label.inputs-maiores{
   margin-right: 0.4rem;
 }
 
-input {
+section.inputs input {
   height: 1.8rem;
   padding: 0.4rem;
   width: 98%;
   max-width: 180px;
 }
 
-input[type="number"]{
+section.inputs input[type="number"]{
   max-width: 120px;
 }
 
-input[type="radio"]{
-  background-color: red;
+section.inputs input[type="radio"]{
+  accent-color: #11e;
   margin: 0 0.5rem;
 }
 
-button {
+section.inputs input.red{
+  accent-color: #e33;
+  margin: 0 0.5rem;
+}
+
+section.inputs button {
   border: none;
   border-radius: 1rem;
   color: #3b5274;
@@ -51,7 +56,7 @@ button {
   transition: all 0.4s;
 }
 
-button:hover {
+section.inputs button:hover {
   background-color: #3b5274;
   color: #fff;
 }
@@ -61,7 +66,7 @@ button:hover {
     display: flex;
     justify-content: center;
   }
-  form {
+  section.inputs form {
     gap: 0.5rem;
     flex-direction: column;
     align-items: flex-start;
