@@ -1,50 +1,36 @@
-import {useState} from "react"
+import { useState } from "react"
 import "./inputs.css"
 
-function Inputs(props) {
-	const [dados, setDados] = useState({
-		descricao: "",
-		valor: "",
-		tipo: ""
-	})
-	function capturarMudanca(e) {
-		let nameInput = e.target.name
-		let valueInput = e.target.value
-		setDados((prevValue)=>{
-			return {
-				...prevValue,
-				[nameInput]: valueInput
-			}
-		})
-	}
+function Inputs() {
+	const [descricao, setDescricao] = useState("")
+	const [valor, setValor] = useState(0)
+	const [tipo, setTipo] = useState("")
+
 	function enviarDados(e) {
 		e.preventDefault()
-		props.onAdd(dados)
-		setDados({
-			descricao: "",
-			valor: "",
-			tipo: ""
-		})
+		
 	}
 	return (    
 		<section className="inputs">
+
 			<form onSubmit={enviarDados}>
+
 				<div className="campo_input">
 					<label className="inputs-maiores">Descrição </label>
 					<input 
-						name="descricao" 
-						value={dados.descricao} 
 						type="text" required
-						onChange={capturarMudanca} 
+						name="descricao" 
+						value={descricao} 
+						onChange={setDescricao} 
 					/>
 				</div>
 				<div className="campo_input">
 					<label className="inputs-maiores">Valor R$ </label>
 					<input 
-						name="valor" 
-						value={dados.valor} 
 						type="number" required
-						onChange={capturarMudanca} 
+						name="valor" 
+						value={valor} 
+						onChange={setValor} 
 					/>
 				</div>
 				<div className="campo_input">
@@ -52,9 +38,9 @@ function Inputs(props) {
 					<input 
 						name="tipo" 
 						value="entrada" 
-						checked={dados.tipo==="entrada"}
+						checked={tipo==="entrada"}
 						type="radio" required 
-						onChange={capturarMudanca} 
+						onChange={setTipo} 
 					/>
 					<label> Saída </label>
 					<input 
@@ -62,12 +48,14 @@ function Inputs(props) {
 						className="red"
 						value="saida" 
 						type="radio" required 
-						checked={dados.tipo==="saida"}
-						onChange={capturarMudanca} 
+						checked={tipo==="saida"}
+						onChange={setTipo} 
 					/>
 				</div>
-					<button type="submit">Salvar</button>
+				<button type="submit">Salvar</button>
+
 			</form>
+
 		</section>
 	)
 }

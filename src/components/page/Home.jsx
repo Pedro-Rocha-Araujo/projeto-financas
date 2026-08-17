@@ -1,46 +1,57 @@
-import {useState} from "react"
+import { useState, useEffect} from "react"
 import Header from "../elements/Header"
 import Footer from "../elements/Footer"
 import Preview from "./preview/Preview"
 import Inputs from "./inputs/Inputs"
 import Tabela from "./listagem/Listagem"
 
+import db from "../../firebaseConnection"
+import { getDocs, collection } from "firebase/firestore"
+
 function Home() {
-  const [listaFinancas, setListaFinancas] = useState([])
+  const [entradas, setEntradas] = useState([])
+  const [saidas, setSaidas] = useState([])
 
-  function adcionar(novaFinanca) {
-    setListaFinancas((prevValue)=>{
-      return [...prevValue, novaFinanca]
-    })
-  }
-
-  function deletar(id) {
-    setListaFinancas((prevValue)=>{
-      return prevValue.filter((_,i)=>{
-        return i !== id
-      })
-    })
-  }
-
-  let entradas = 0
-  let saidas = 0
-  for(let c = 0; c < listaFinancas.length; c++){
-    if(listaFinancas[c].tipo === "entrada"){
-      entradas = entradas + Number(listaFinancas[c].valor)
-    }else{
-      saidas = saidas + Number(listaFinancas[c].valor)
+  useEffect(()=> {
+    async function getFinancas() {
+      try {
+        const referencia = collection(db, "financas")
+        const response = await getDocs(referencia)
+        console.log(response)
+        const array = response.docs.map((i)=> {
+          const dados = i.data()
+          return {
+            id: i.id,
+            descricao: dados.descricao,
+            valor: dados.valor,
+            tipo: dados.tipo
+          }          
+        })
+        const ent = []
+        const sai = []
+        array.map((i)=>{
+          if(i.tipo === "entrada") {
+            ent.push(i)
+          } else {
+            sai.push(i)
+          }
+        })
+        setEntradas(ent)
+        setSaidas(sai)
+      } catch(erro) {
+        console.log(erro)
+      }
     }
-  }
-
-  const total = entradas - saidas
+    getFinancas()
+  }, [])
 
   return (
     <div className='main'>
       <Header />
       <main>
-          <Preview entradas={entradas} saidas={saidas} total={total} />
-          <Inputs onAdd={adcionar} />
-          <Tabela onDelete={deletar} lista={listaFinancas} />
+        <Preview />
+        <Inputs />
+        <Tabela />
       </main>
       <Footer />
     </div>

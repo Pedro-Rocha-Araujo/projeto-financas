@@ -1,30 +1,26 @@
 import "./listagem.css"
 
-function Tabela(props) {
+function Tabela() {
 	return (
 		<section className="tabela">
 			<table>
 				<thead>
 					<tr>
-							<th>Descrição</th>
-							<th>Valor</th>
-							<th>Tipo</th>
-							<th>Excluir</th>
+						<th>Descrição</th>
+						<th>Valor</th>
+						<th>Tipo</th>
+						<th>Excluir</th>
 					</tr>
 				</thead>
 				<tbody>
-					{props.lista.map((_,i)=>{
-						return (
-							<tr>
-								<td data-label="Descrição:">{_.descricao}</td>
-								<td data-label="Valor:">{_.valor}</td>
-								<td data-label="Tipo:">{_.tipo}</td>
-								<td data-label="Excluir:" onClick={()=>{ props.onDelete(i) }}>
-									<i class="fa-solid fa-trash"></i>
-								</td>
-							</tr>
-						)
-					})}
+					<tr>
+						<td data-label="Descrição:">_.descricao</td>
+						<td data-label="Valor:">_.valor</td>
+						<td data-label="Tipo:">_.tipo</td>
+						<td data-label="Excluir:">
+							<i className="fa-solid fa-trash"></i>
+						</td>
+					</tr>
 				</tbody>
 			</table>
 		</section>

@@ -11,6 +11,7 @@ function AppRouter() {
       <Route path="/" element={ <CheckToken> <Home /> </CheckToken> } />
       <Route path="/auth/cadastro" element={ <Cadastro /> } />
       <Route path="/auth/login" element={ <Login /> } />
+      <Route path="*" element={ <CheckToken> <Home /> </CheckToken> } />
     </Routes>
   )
 }
