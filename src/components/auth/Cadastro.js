@@ -15,6 +15,9 @@ export default function Cadastro() {
           <input 
             placeholder="Digite seu E-mail"
           />
+          <input 
+            placeholder="Digite sua Senha"
+          />
           <button>Cadastrar</button>
         </form>
 

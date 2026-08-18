@@ -37,6 +37,7 @@ form.main-auth input {
   height: 2.8rem;
   border-left: 1px solid #3b5274;
   border-right: 1px solid #3b5274;
+  border-top: 1px solid #3b5274;
 }
 
 form.main-auth button {
