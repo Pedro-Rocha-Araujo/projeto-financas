@@ -1,14 +1,43 @@
 import { useState } from "react"
+import { toast } from "react-toastify"
 import "./inputs.css"
+
+import { db } from "../../../firebaseConnection"
+import { addDoc, collection } from "firebase/firestore"
 
 function Inputs() {
 	const [descricao, setDescricao] = useState("")
 	const [valor, setValor] = useState(0)
-	const [tipo, setTipo] = useState("")
+	const [tipo, setTipo] = useState("entrada")
 
-	function enviarDados(e) {
+	async function enviarDados(e) {
 		e.preventDefault()
-		
+		try {
+			const token = localStorage.getItem("token")
+			if(!token) {
+				return toast.error("Usuário não autorizado")
+			}
+
+			if(!descricao.trim() || valor===0 ) {
+				return toast.error("Preencha os campos corretamente.")
+			}
+
+			const referencia = collection(db, "financas")
+			await addDoc(referencia, {
+				descricao: descricao,
+				valor: Number(valor),
+				tipo: tipo,
+				id_usuario: token
+			})
+			
+			setDescricao("")
+			setValor(0)
+			setTipo("entrada")
+			toast.success("Adicionado")
+		} catch(erro) {
+			console.log(erro)
+			toast.error("Erro ao cadastrar")
+		}
 	}
 	return (    
 		<section className="inputs">
@@ -21,7 +50,7 @@ function Inputs() {
 						type="text" required
 						name="descricao" 
 						value={descricao} 
-						onChange={setDescricao} 
+						onChange={(e)=>setDescricao(e.target.value)} 
 					/>
 				</div>
 				<div className="campo_input">
@@ -30,7 +59,7 @@ function Inputs() {
 						type="number" required
 						name="valor" 
 						value={valor} 
-						onChange={setValor} 
+						onChange={(e)=>setValor(e.target.value)} 
 					/>
 				</div>
 				<div className="campo_input">
@@ -40,7 +69,7 @@ function Inputs() {
 						value="entrada" 
 						checked={tipo==="entrada"}
 						type="radio" required 
-						onChange={setTipo} 
+						onChange={(e)=>setTipo(e.target.value)}  
 					/>
 					<label> Saída </label>
 					<input 
@@ -49,7 +78,7 @@ function Inputs() {
 						value="saida" 
 						type="radio" required 
 						checked={tipo==="saida"}
-						onChange={setTipo} 
+						onChange={(e)=>setTipo(e.target.value)}  
 					/>
 				</div>
 				<button type="submit">Salvar</button>

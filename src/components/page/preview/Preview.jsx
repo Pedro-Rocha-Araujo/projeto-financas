@@ -1,5 +1,4 @@
 import "./preview.css"
-import { useState, useEffect } from "react"
 
 function Preview({ entradas, saidas }) {
   const totalEntradas = entradas.reduce((total, atual)=>{
