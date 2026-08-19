@@ -6,7 +6,7 @@ import Inputs from "./inputs/Inputs"
 import Tabela from "./listagem/Listagem"
 
 import { db } from "../../firebaseConnection"
-import { getDocs, onSnapshot, collection } from "firebase/firestore"
+import { onSnapshot, collection } from "firebase/firestore"
 
 function Home() {
   const [entradas, setEntradas] = useState([])
@@ -16,7 +16,7 @@ function Home() {
     async function getFinancas() {
       try {
         const referencia = collection(db, "financas")
-        const response = await onSnapshot(referencia, (snapshot)=>{
+        await onSnapshot(referencia, (snapshot)=>{
           const array = snapshot.docs.map((snap)=>{
             return {
               id: snap.id,
@@ -41,7 +41,7 @@ function Home() {
     <div className='main'>
       <Header />
       <main>
-        <Preview />
+        <Preview entradas={entradas} saidas={saidas} />
         <Inputs />
         <Tabela />
       </main>

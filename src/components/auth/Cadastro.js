@@ -4,6 +4,7 @@ import "./auth.css"
 
 import { auth } from "../../firebaseConnection"
 import { createUserWithEmailAndPassword } from "firebase/auth"
+import { toast } from "react-toastify"
 
 export default function Cadastro() {
   const [email, setEmail] = useState("")
@@ -13,8 +14,12 @@ export default function Cadastro() {
     e.preventDefault()
     try {
       await createUserWithEmailAndPassword(auth, email, senha)
+      setEmail("")
+      setSenha("")
+      toast.success("Usuário cadastrado")
     } catch(erro) {
       console.log(erro)
+      toast.error("Erro ao cadastrar usuário")
     }
   }
 
