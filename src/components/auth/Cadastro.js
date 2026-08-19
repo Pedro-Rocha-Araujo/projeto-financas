@@ -30,7 +30,7 @@ export default function Cadastro() {
         toast.error("Email já cadastrado")
         return
       }
-      toast.error("Erro ao cadastrar usuário")
+      toast.error("Erro no cadastro")
     }
   }
 
@@ -47,12 +47,14 @@ export default function Cadastro() {
           <input 
             type="text"
             value={email}
+            required
             onChange={(e)=>setEmail(e.target.value)}
             placeholder="Digite seu E-mail"
           />
           <input 
             type="text"
             value={senha}
+            required
             onChange={(e)=>setSenha(e.target.value)}
             placeholder="Digite sua Senha"
           />
