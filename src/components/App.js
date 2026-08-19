@@ -5,8 +5,8 @@ import "./global.css"
 
 function App() {
   return (
-    <BrowserRouter>
-      <ToastContainer />
+    <BrowserRouter>   
+      <ToastContainer autoClose={1000} />
       <AppRouter />
     </BrowserRouter>
   );

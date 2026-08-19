@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import "./auth.css"
 
 import { auth } from "../../firebaseConnection"
@@ -7,18 +7,29 @@ import { createUserWithEmailAndPassword } from "firebase/auth"
 import { toast } from "react-toastify"
 
 export default function Cadastro() {
+  const navigate = useNavigate()
+
   const [email, setEmail] = useState("")
   const [senha, setSenha] = useState("")
 
   async function cadastrarUsuario(e) {
     e.preventDefault()
     try {
-      await createUserWithEmailAndPassword(auth, email, senha)
+      const response = await createUserWithEmailAndPassword(auth, email, senha)
+      localStorage.setItem("token", response.user.uid)
       setEmail("")
       setSenha("")
-      toast.success("Usuário cadastrado")
+      navigate("/")
     } catch(erro) {
       console.log(erro)
+      if(erro.code === "auth/weak-password") {
+        toast.error("Senha muito fraca") 
+        return
+      }
+      if(erro.code === "auth/email-already-in-use") {
+        toast.error("Email já cadastrado")
+        return
+      }
       toast.error("Erro ao cadastrar usuário")
     }
   }
