@@ -1,6 +1,6 @@
 # Gerenciador de Finanças 🔢
 
-<img width="1920" height="945" alt="projeto-financas" src="https://github.com/user-attachments/assets/1bdeef3b-cd29-4d49-893a-e1dbdf0542b3" />
+<img width="1920" height="910" alt="projeto-financas" src="https://github.com/user-attachments/assets/04e676c8-aa67-4768-9c67-f99d8c3c6560" />
 
 ## O presente projeto é um gerenciador de finanças que possui as seguintes funcionalidades:
 * Cadastrar entradas e Saídas financeiras
