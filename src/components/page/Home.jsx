@@ -1,14 +1,19 @@
-import { useState, useEffect} from "react"
+import { useState, useEffect } from "react"
+import { useNavigate } from "react-router-dom"
 import Header from "../elements/Header"
 import Footer from "../elements/Footer"
 import Preview from "./preview/Preview"
 import Inputs from "./inputs/Inputs"
 import Tabela from "./listagem/Listagem"
 
-import { db } from "../../firebaseConnection"
+import { toast } from "react-toastify"
+import { db, auth } from "../../firebaseConnection"
 import { onSnapshot, collection } from "firebase/firestore"
+import { signOut } from "firebase/auth"
 
 function Home() {
+  const navigate = useNavigate()
+
   const [entradas, setEntradas] = useState([])
   const [saidas, setSaidas] = useState([])
 
@@ -42,6 +47,17 @@ function Home() {
     getFinancas()
   }, [])
 
+  async function sair() {
+    try {
+      await signOut(auth)
+      localStorage.removeItem("token")
+      navigate("/auth/login")
+    } catch(erro) {
+      console.log(erro)
+      toast.error("Erro ao sair")
+    }
+  }
+
   return (
     <div className='main'>
       <Header />
@@ -49,6 +65,9 @@ function Home() {
         <Preview entradas={entradas} saidas={saidas} />
         <Inputs />
         <Tabela entradas={entradas} saidas={saidas} />
+        <button onClick={sair} className="sair">
+          <i className="fa-solid fa-right-from-bracket"></i>
+        </button>
       </main>
       <Footer />
     </div>
