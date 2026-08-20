@@ -7,7 +7,7 @@ import { addDoc, collection } from "firebase/firestore"
 
 function Inputs() {
 	const [descricao, setDescricao] = useState("")
-	const [valor, setValor] = useState()
+	const [valor, setValor] = useState("")
 	const [tipo, setTipo] = useState("entrada")
 
 	async function enviarDados(e) {
