@@ -1,6 +1,6 @@
 section.preview {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 0.4rem;
 }
 
@@ -17,9 +17,12 @@ div.item-preview{
 
 @media screen and (max-width: 480px) {
   section.preview {
-    flex-direction: column;
+    grid-template-columns: 1fr 1fr;
   }
   div.item-preview {
-    padding: 1rem 0;
+    padding: 1.5rem 0;
+  }
+  div.maior {
+    grid-column: -3 / -1;
   }
 }

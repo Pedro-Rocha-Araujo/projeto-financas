@@ -21,7 +21,7 @@ function Preview({ entradas, saidas }) {
         <h2>Saídas <i className="fa-solid fa-arrow-turn-down"></i> </h2>
         <p>R$ {totalSaidas}</p>
       </div>
-      <div className='item-preview'>
+      <div className='item-preview maior'>
         <h2>Situação <i className="fa-solid fa-arrow-trend-up"></i></h2>
         <p>R$ {situacao}</p>
       </div>
