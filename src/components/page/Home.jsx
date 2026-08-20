@@ -15,6 +15,10 @@ function Home() {
   useEffect(()=> {
     async function getFinancas() {
       try {
+        const token = localStorage.getItem("token")
+        if(!token) {
+          return null
+        }
         const referencia = collection(db, "financas")
         await onSnapshot(referencia, (snapshot)=>{
           const array = snapshot.docs.map((snap)=>{
@@ -22,11 +26,12 @@ function Home() {
               id: snap.id,
               descricao: snap.data().descricao,
               valor: snap.data().valor,
-              tipo: snap.data().tipo
+              tipo: snap.data().tipo,
+              id_usuario: snap.data().id_usuario
             }
           })
-          const ent = array.filter((i)=> i.tipo === "entrada")
-          const sai = array.filter((i)=> i.tipo === "saida")
+          const ent = array.filter((i)=> i.tipo === "entrada" && i.id_usuario === token)
+          const sai = array.filter((i)=> i.tipo === "saida" && i.id_usuario === token)
           setEntradas(ent)
           setSaidas(sai)
         })     
