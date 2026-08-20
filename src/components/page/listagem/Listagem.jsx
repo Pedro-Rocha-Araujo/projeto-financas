@@ -32,7 +32,7 @@ function Tabela({ entradas, saidas }) {
 							return (
 								<tr key={item.id}>
 									<td data-label="Descrição:">{ item.descricao }</td>
-									<td data-label="Valor:">{ item.valor }</td>
+									<td data-label="Valor:">R$ { item.valor }</td>
 									<td data-label="Tipo:">{ item.tipo }</td>
 									<td data-label="Excluir:">
 										<i onClick={()=>deletarItem(item.id)} className="fa-solid fa-trash"></i>
@@ -47,7 +47,7 @@ function Tabela({ entradas, saidas }) {
 							return (
 								<tr key={item.id}>
 									<td data-label="Descrição:">{ item.descricao }</td>
-									<td data-label="Valor:">{ item.valor }</td>
+									<td data-label="Valor:">R$ { item.valor }</td>
 									<td data-label="Tipo:">{ item.tipo }</td>
 									<td data-label="Excluir:">
 										<i onClick={()=>deletarItem(item.id)} className="fa-solid fa-trash"></i>

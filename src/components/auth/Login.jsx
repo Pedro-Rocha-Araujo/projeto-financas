@@ -23,7 +23,7 @@ export default function Cadastro() {
     } catch(erro) {
       console.log(erro)
       if(erro.code === "auth/invalid-credential") {
-        toast.error("E-mail não cadastrado")
+        toast.error("Dado(s) inválido(s)")
         return
       }
       toast.error("Erro no login")
