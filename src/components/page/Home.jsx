@@ -43,7 +43,7 @@ function Home() {
       <main>
         <Preview entradas={entradas} saidas={saidas} />
         <Inputs />
-        <Tabela />
+        <Tabela entradas={entradas} saidas={saidas} />
       </main>
       <Footer />
     </div>
