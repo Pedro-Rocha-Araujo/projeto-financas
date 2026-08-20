@@ -14,15 +14,15 @@ function Preview({ entradas, saidas }) {
   return (
     <section className='preview'>
       <div className='item-preview'>
-        <h2>Entradas <i class="fa-solid fa-arrow-turn-up"></i></h2>
+        <h2>Entradas <i className="fa-solid fa-arrow-turn-up"></i></h2>
         <p>R$ {totalEntradas}</p>
       </div>
       <div className='item-preview'>
-        <h2>Saídas <i class="fa-solid fa-arrow-turn-down"></i> </h2>
+        <h2>Saídas <i className="fa-solid fa-arrow-turn-down"></i> </h2>
         <p>R$ {totalSaidas}</p>
       </div>
       <div className='item-preview'>
-        <h2>Situação <i class="fa-solid fa-arrow-trend-up"></i></h2>
+        <h2>Situação <i className="fa-solid fa-arrow-trend-up"></i></h2>
         <p>R$ {situacao}</p>
       </div>
     </section>
